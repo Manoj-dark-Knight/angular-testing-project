@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="getUsersBtn" (click)=getUsers($event)>Get Users</button>
+
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email ID</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- User data will go here -->
+      <tr *ngFor="let user of Users">
+      	<td>{{user.id}}</td>
+      	<td>{{user.name}}</td>
+      	<td>{{user.username}}</td>
+      	<td>{{user.email}}</td>
+      	<td>{{user.phone}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
